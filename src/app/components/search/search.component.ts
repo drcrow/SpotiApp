@@ -17,11 +17,14 @@ export class SearchComponent implements OnInit {
 
   search( term: string ) {
     console.log(term);
-    this.spotify.searchArtists( term )
-      .subscribe ( ( data: any ) => {
-        console.log( data );
-        this.artists = data;
-      } );
+
+    if (term.length >= 3) {
+      this.spotify.searchArtists( term )
+        .subscribe ( ( data: any ) => {
+          console.log( data );
+          this.artists = data;
+        } );
+    }
   }
 
 }
