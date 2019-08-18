@@ -6,7 +6,7 @@
 
 <div class="card-columns m-5">
     <div *ngFor="let artist of artists" class="card">
-        <a [href]="artist.external_urls.spotify" target="_blank"><img [src]="artist.images[0].url" class="card-img-top" [alt]="artist.name"></a>
+        <a [href]="artist.external_urls.spotify" target="_blank"><img [src]="artist.images | noimage" class="card-img-top" [alt]="artist.name"></a>
         <div class="card-body">
             <h5 class="card-title">{{ artist.name }}</h5>
             <p class="card-text">

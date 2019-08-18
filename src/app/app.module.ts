@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 // ROUTES
 import { MYROUTES } from './app.routes';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 
 
@@ -22,7 +23,8 @@ import { MYROUTES } from './app.routes';
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,

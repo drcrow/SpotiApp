@@ -1,6 +1,6 @@
 <div class="card-columns">
     <div *ngFor="let release of newReleases" class="card">
-        <a [href]="release.external_urls.spotify" target="_blank"><img [src]="release.images[0].url" class="card-img-top" [alt]="release.name"></a>
+        <a [href]="release.external_urls.spotify" target="_blank"><img [src]="release.images | noimage" class="card-img-top" [alt]="release.name"></a>
         <div class="card-body">
             <h5 class="card-title">{{ release.name }}</h5>
             <p class="card-text">
