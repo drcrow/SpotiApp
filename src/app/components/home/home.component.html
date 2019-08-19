@@ -1,11 +1,1 @@
-<div class="card-columns">
-    <div *ngFor="let release of newReleases" class="card">
-        <a [href]="release.external_urls.spotify" target="_blank"><img [src]="release.images | noimage" class="card-img-top" [alt]="release.name"></a>
-        <div class="card-body">
-            <h5 class="card-title">{{ release.name }}</h5>
-            <p class="card-text">
-                <span *ngFor="let artist of release.artists" class="badge badge-pill badge-primary">{{ artist.name }}</span>
-            </p>
-        </div>
-    </div>
-</div>
+<app-cards [items]="newReleases"></app-cards>
