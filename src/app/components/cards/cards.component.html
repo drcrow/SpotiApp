@@ -1,10 +1,10 @@
 <div class="card-columns m-5">
     <div *ngFor="let item of items" class="card">
-        <a [href]="item.external_urls.spotify" target="_blank"><img [src]="item.images | noimage" class="card-img-top" [alt]="item.name"></a>
+        <img (click)="showFirstArtist( item )" [src]="item.images | noimage" class="card-img-top puntero" [alt]="item.name">
         <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
             <p class="card-text" *ngIf="item.artists">
-                <span *ngFor="let artist of item.artists" class="badge badge-pill badge-primary">{{ artist.name }}</span>
+                <span (click)="showArtist( artist.id )" *ngFor="let artist of item.artists" class="badge badge-pill badge-primary puntero">{{ artist.name }}</span>
             </p>
             <p class="card-text" *ngIf="item.genres">
                 <span *ngFor="let genre of item.genres" class="badge badge-pill badge-primary">{{ genre }}</span>
