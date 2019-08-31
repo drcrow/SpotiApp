@@ -6,7 +6,7 @@ import { SpotifyService } from '../../services/spotify.service'
   templateUrl: './home.component.html',
   styles: []
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   newReleases: any[] = [];
   loading: boolean;
@@ -19,9 +19,6 @@ export class HomeComponent implements OnInit {
         this.newReleases = data;
         this.loading = false;
       } );
-  }
-
-  ngOnInit() {
   }
 
 }
