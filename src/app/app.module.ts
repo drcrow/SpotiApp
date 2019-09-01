@@ -14,6 +14,7 @@ import { MYROUTES } from './app.routes';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { SafedomPipe } from './pipes/safedom.pipe';
 
 
 
@@ -28,7 +29,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     NoimagePipe,
     CardsComponent,
-    LoadingComponent
+    LoadingComponent,
+    SafedomPipe
   ],
   imports: [
     BrowserModule,
