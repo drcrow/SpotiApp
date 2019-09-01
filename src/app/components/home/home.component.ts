@@ -10,6 +10,8 @@ export class HomeComponent {
 
   newReleases: any[] = [];
   loading: boolean;
+  hasError = false;
+  errorMessage: string;
 
   constructor( private spotify: SpotifyService ) { 
     this.loading = true;
@@ -18,6 +20,11 @@ export class HomeComponent {
         console.log(data);
         this.newReleases = data;
         this.loading = false;
+      }, ( serviceError ) => {
+        this.hasError = true;
+        this.loading = false;
+        this.errorMessage = serviceError.error.error.message;
+        console.log(serviceError.error.error);
       } );
   }
 
