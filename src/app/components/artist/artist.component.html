@@ -17,3 +17,32 @@
         <button routerLink="/search" class="btn btn-outline-danger">Back</button>
     </div>
 </div>
+
+<div *ngIf="!loading" class="row">
+    <div class="col">
+
+        <table class="tracks-table table table-striped table-dark">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Disk</th>
+                    <th scope="col">Track</th>
+                    <th scope="col">Preview</th>
+                    <th scope="col">Spotify</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of tracks">
+                    <th scope="row"><img [src]="track.album.images | noimage" alt="{{ track.name }}" class="img-thumb"></th>
+                    <td>{{ track.album.name }}</td>
+                    <td>{{ track.name }}</td>
+                    <td><audio [src]="track.preview_url" controls></audio></td>
+                    <td><a [href]="track.external_urls.spotify" target="_blank">GO</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

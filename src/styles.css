@@ -65,3 +65,10 @@ hr {
 .fadeIn {
     animation-name: fadeIn;
 }
+
+
+/* Dr. CroW */
+
+.tracks-table {
+    margin-top: 20px;
+}

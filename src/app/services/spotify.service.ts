@@ -9,14 +9,14 @@ import { stringify } from 'querystring';
 export class SpotifyService {
 
   constructor( private http: HttpClient ) {
-    console.log('spotify service ready');
+    // console.log('spotify service ready');
   }
 
   getQuery( query: string ) {
     const url = 'https://api.spotify.com/v1/' + query;
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQA3g7FyIxsjN2sVQ5MbQfDKEOlMG1kFpk0tfKJ4S7itU31s1b85UzFfh0dPVbV374s7hikVjoj0npY1_GA'
+      'Authorization': 'Bearer BQA_LkdQlJox3e6q0Yk5ElGXQzdCoXjQXCOTVx6Vasg2DUz3iGK8dstFTgemDNerRt0Zrh8Vepp2jQjsNhY'
     });
 
     return this.http.get(url, { headers });
@@ -44,6 +44,13 @@ export class SpotifyService {
     return this.getQuery( 'artists/' + id )
       .pipe( map( (data: any) => {
         return data;
+      } ) );
+  }
+
+  getTopTracks( id: string ) {
+    return this.getQuery( 'artists/' + id + '/top-tracks?country=AR' )
+      .pipe( map( (data: any) => {
+        return data.tracks;
       } ) );
   }
 }
